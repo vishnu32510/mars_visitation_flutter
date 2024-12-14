@@ -31,32 +31,31 @@ class PersonalInformation extends StatelessWidget {
             builder: (context, state) {
               return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 DisplayPages(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Personal Information',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(context).colorScheme.primary),
-                        ),
-                        _FullName(),
-                        _Dob(),
-                        _Nationality(),
-                        _Email(),
-                        _Phone(),
-                        PageMoveButton(
-                          buttonText: 'Next Page',
-                          isValid: state.isValid,
-                          onPressed: () {
-                            Navigator.pushNamed(context, TravelPreferecne.routeName);
-                          },
-                        )
-                      ],
-                    ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Personal Information',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 36,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context).colorScheme.primary),
+                      ),
+                      _FullName(),
+                      _Dob(),
+                      _Nationality(),
+                      _Email(),
+                      _Phone(),
+                      PageMoveButton(
+                        buttonText: 'Next Page',
+                        isValid: state.isValid,
+                        onPressed: () {
+                          Navigator.pushNamed(context, TravelPreferecne.routeName);
+                        },
+                      )
+                    ],
                   ),
                 ),
                 LottieImageDisplay(

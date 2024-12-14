@@ -35,48 +35,45 @@ class HealthAndSafety extends StatelessWidget {
         },
         builder: (context, state) {
           return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                      LottieImageDisplay(name: AppAssets.lottie3,),
-
             DisplayPages(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Health And Safety',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 36, fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.primary),
-                    ),
-                    _HealthAndDeclaration(),
-                    _EmergencyContact(),
-                    _MedicalConditions(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        PageMoveButton(
-                          buttonText: "Previous Page",
-                          isValid: true,
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        PageMoveButton(
-                          buttonText: "Submit",
-                          isValid: state.isValid,
-                          onPressed: () {
-                            Navigator.pushNamed(context, SuccessPage.routeName);
-                          },
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Health And Safety',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 36, fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.primary),
+                  ),
+                  _HealthAndDeclaration(),
+                  _EmergencyContact(),
+                  _MedicalConditions(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      PageMoveButton(
+                        buttonText: "Previous Page",
+                        isValid: true,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      PageMoveButton(
+                        buttonText: "Submit",
+                        isValid: state.isValid,
+                        onPressed: () {
+                          Navigator.pushNamed(context, SuccessPage.routeName);
+                        },
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
+            LottieImageDisplay(name: AppAssets.lottie3,),
           ]);
         },
       ),

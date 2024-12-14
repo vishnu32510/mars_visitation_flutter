@@ -42,45 +42,43 @@ class TravelPreferecne extends StatelessWidget {
           children: [
                       LottieImageDisplay(name: AppAssets.lottie2,),
           DisplayPages(
-            child: SingleChildScrollView(
-              child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Travel Preference',
-                  textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 36, fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.primary),
-                ),
-                _DepartureDate(),
-                _ReturnDate(),
-                _AccomadationPreference(),
-                _SpecialRequest(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    PageMoveButton(
-                      buttonText: "Previous Page",
-                      isValid: true,
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    PageMoveButton(
-                      buttonText: "Next Page",
-                      isValid: state.isValid,
-                      onPressed: () {
-                        Navigator.pushNamed(context, HealthAndSafety.routeName);
-                      },
-                    ),
-                  ],
-                )
-              ],
-                        ),
-            ),
+            child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Travel Preference',
+                textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 36, fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.primary),
+              ),
+              _DepartureDate(),
+              _ReturnDate(),
+              _AccomadationPreference(),
+              _SpecialRequest(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  PageMoveButton(
+                    buttonText: "Previous Page",
+                    isValid: true,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  PageMoveButton(
+                    buttonText: "Next Page",
+                    isValid: state.isValid,
+                    onPressed: () {
+                      Navigator.pushNamed(context, HealthAndSafety.routeName);
+                    },
+                  ),
+                ],
+              )
+            ],
+                      ),
           ),
         ]);
       },
